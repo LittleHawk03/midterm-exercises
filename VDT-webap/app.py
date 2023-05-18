@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for # For catching InvalidId exception for ObjectId
 import os
-import json
 import requests
 
 title = "my dream"

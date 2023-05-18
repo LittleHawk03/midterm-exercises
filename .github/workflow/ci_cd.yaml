@@ -2,15 +2,25 @@ name: built
 
 on:
   push:
-    branches: [master,main]
+    branches: [master, main]
+    path:
+      - "!README.md"
   pull_request:
-    branches: [master,main]
+    branches: [master, main]
+    path:
+      - "!README.md"
 
 
 jobs:
 
   built: 
-
     runs-on: ubuntu-latest
+    # strategy:
+    #   python-version: ["3.7", "3.8","3.8","3.9","3.10"]
+    
+    steps:
+      # - uses: action/checkout@v3
+      run: echo HELLO
+
 
   
