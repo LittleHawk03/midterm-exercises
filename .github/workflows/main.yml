@@ -40,7 +40,7 @@ jobs:
 
       - name: run api docker images
         run: |
-          docker run -d -p 3000:3000 -e mongo_host=localhost mongo_port=27017 littlehawk03/api:latest
+          docker run -d -p 3000:3000 -e mongo_host=localhost -e mongo_port=27017 littlehawk03/api:latest
 
       - name: test with unittest
         run: |
