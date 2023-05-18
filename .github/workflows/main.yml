@@ -32,16 +32,16 @@ jobs:
           pip install --upgrade pip
           if [ -f "api/requirements.txt" ]; then pip install -r "api/requirements.txt"; fi
 
-      # - name: pull docker image
-      #   run: |
-      #     docker pull littlehawk03/api:latest
+      - name: pull docker image
+        run: |
+          docker pull mongo:5.0
 
       - name: Start containers
         run: docker-compose -f "mongodb/docker-compose.yml" up -d --build
 
       - name: run api with python
         run: |
-          python -d -u "api/api.py" >> /dev/null
+          python -u "api/api.py" >> /dev/null
 
 
       - name: test api running
