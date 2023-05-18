@@ -47,7 +47,7 @@ jobs:
       
       - name: test api
         run: |
-          curl 0.0.0.0:5500
+          curl https://0.0.0.0:5500
       # - name: runtest
       #   run:
       #     python -u "tests/unit-test.py"  

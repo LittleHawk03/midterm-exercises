@@ -5,7 +5,7 @@ import json
 import os
 
 
-base_host = os.environ.get('API_HOST', 'http://0.0.0.0')
+base_host = os.environ.get('API_HOST', 'https://localhost')
 base_port = os.environ.get('API_POST', '5500')
 
 
