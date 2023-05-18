@@ -41,7 +41,7 @@ jobs:
 
       - name: run api with python
         run: |
-          python -d -u "api/api.py"
+          python -d -u "api/api.py" >> /dev/null
 
 
       - name: test api running
