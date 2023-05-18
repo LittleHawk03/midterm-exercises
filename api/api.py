@@ -42,6 +42,10 @@ def get_all_candidates():
     return jsonify(candidates)          
 
 
+
+
+
+
 @app.route('/candidates/<string:_id>', methods=['GET'])
 def get_candidate(_id):
     candidates = []
