@@ -7,7 +7,7 @@ heading = "THE ADVENTURE OF VIETTEL DIGITAL TALENT"
 
 
 base_host =  os.environ.get('API_HOST','http://localhost')
-base_port =  os.environ.get('API_POST','3000')
+base_port =  os.environ.get('API_POST','5500')
 
 
 app = Flask(__name__)

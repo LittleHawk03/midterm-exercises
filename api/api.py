@@ -2,7 +2,6 @@ from flask import Flask, jsonify, url_for, redirect, request
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-import logging
 # from flask_restful import Api, Resource
 import os
 # import json
@@ -19,8 +18,6 @@ db = client.list_candidate_VDT
 candidate_collection = db.candidate
 
 # candidate_collection = db.mycollection
-log = logging.getLogger('werkzeug')
-
 
 
 
@@ -41,7 +38,7 @@ def get_all_candidates():
             "university": candidate['university'],
             "Username": candidate['Username'],
             "field": candidate['field']
-        }) 
+        })
     return jsonify(candidates)          
 
 
@@ -156,8 +153,7 @@ def search_candidate():
 if __name__ == "__main__":  # checking if __name__'s value is '__main__'. __name__ is an python environment variable who's value will always be '__main__' till this is the first instatnce of app.py running
     # check_empty()
     env = os.environ.get('FLASK_ENV', 'development')
-    app.logger.setLevel(logging.ERROR)
-    app.run(debug=True, port=3000, host="0.0.0.0")
+    app.run(debug=True, port=5500, host="0.0.0.0")
     
     
     

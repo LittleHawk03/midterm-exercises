@@ -30,4 +30,4 @@ COPY --from=builder /root/.local /root/.local
 
 COPY . .
 
-CMD ["python", "api.py"]
+CMD ["python", "app.py"]
