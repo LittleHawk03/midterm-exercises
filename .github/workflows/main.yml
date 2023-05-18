@@ -39,7 +39,7 @@ jobs:
           docker pull python:3.9-alpine3.15
 
       - name: Start containers
-        run: docker-compose -f "test/docker-compose.yml" up -d --build
+        run: docker-compose -f "api/docker-compose.yml" up -d --build
 
       - name: check docker container running
         run:
