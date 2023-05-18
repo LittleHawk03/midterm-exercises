@@ -2,11 +2,11 @@ name: built
 
 on:
   push:
-    branches: [master, main]
+    branches: [master]
     path:
       - "!README.md"
   pull_request:
-    branches: [master, main]
+    branches: [master]
     path:
       - "!README.md"
 

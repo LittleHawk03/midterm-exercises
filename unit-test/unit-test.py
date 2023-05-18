@@ -63,7 +63,7 @@ class TestCandidatesAPI(unittest.TestCase):
         mock_data_change ={
             "STT": 0,
             "fullname": "test this shit change",
-            "year of birth": 2004,
+            "year of birth": 2009,
             "gender": "Nữ",
             "university": "harvard",
             "Username": "testYY",
