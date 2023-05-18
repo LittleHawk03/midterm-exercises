@@ -6,7 +6,7 @@ import os
 
 
 base_host = os.environ.get('API_HOST', 'http://localhost')
-base_port = os.environ.get('API_POST', '3000')
+base_port = os.environ.get('API_POST', '5500')
 
 
 class TestCandidatesAPI(unittest.TestCase):

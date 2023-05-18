@@ -39,9 +39,9 @@ jobs:
       - name: Start containers
         run: docker-compose -f "api/docker-compose.yml" up -d --build
 
-      - name: test api running
-        run: |
-          curl http://localhost:5500
+      # - name: test api running
+      #   run: |
+      #     curl http://localhost:5500
 
       - name: test with unittest
         run: |
