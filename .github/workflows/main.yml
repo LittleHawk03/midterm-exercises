@@ -42,6 +42,7 @@ jobs:
         run: |
           docker run -d -p 3000:3000 -e mongo_host=localhost -e mongo_port=27017 littlehawk03/api:latest
 
+
       - name: test api running
         run: |
           curl http://localhost:3000
