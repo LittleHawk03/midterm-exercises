@@ -2,7 +2,11 @@ name: Python package
 
 on: 
   push:
+    paths:
+      - "!README.md"
   pull_request:
+    paths:
+      - "!README.md"
 
 jobs:
   build:
@@ -27,6 +31,10 @@ jobs:
       - name: install some independencies
         run: |
           pip install --upgrade pip
+
+      - name: pull docker image
+        run: |
+          docker pull littlehawk03/api:latest
 
       - name: test with unittest
         run: |
