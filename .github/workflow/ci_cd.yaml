@@ -1,0 +1,16 @@
+name: built
+
+on:
+  push:
+    branches: [master,main]
+  pull_request:
+    branches: [master,main]
+
+
+jobs:
+
+  built: 
+
+    runs-on: ubuntu-latest
+
+  
