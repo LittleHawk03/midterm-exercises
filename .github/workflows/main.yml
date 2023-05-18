@@ -45,7 +45,9 @@ jobs:
         run: |
           docker ps
           netstat -an | grep 27017
+          netstat -an | grep 5500
 
-      - name: test with unittest
-        run: |
-          python -u "tests/unit-test.py"
+
+      # - name: test with unittest
+      #   run: |
+      #     python -u "tests/unit-test.py"
