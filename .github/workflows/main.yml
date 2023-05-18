@@ -31,10 +31,12 @@ jobs:
         run: |
           pip install --upgrade pip
           if [ -f "api/requirements.txt" ]; then pip install -r "api/requirements.txt"; fi
+          if [ -f "tests/requirements.txt" ]; then pip install -r "tests/requirements.txt"; fi
 
       - name: pull docker image
         run: |
           docker pull mongo:5.0
+          docker pull python:3.9-alpine3.15
 
       - name: Start containers
         run: docker-compose -f "api/docker-compose.yml" up -d --build
