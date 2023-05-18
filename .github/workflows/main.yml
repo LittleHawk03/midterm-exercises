@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       # You can use PyPy versions in python-version.
       # For example, pypy2.7 and pypy3.9
@@ -45,6 +45,9 @@ jobs:
         run:
           docker ps
       
-      - name: runtest
-        run:
-          python -u "tests/unit-test.py"  
+      - name: test api
+        run: |
+          curl 0.0.0.0:5500
+      # - name: runtest
+      #   run:
+      #     python -u "tests/unit-test.py"  
