@@ -44,3 +44,7 @@ jobs:
       - name: check docker container running
         run:
           docker ps
+      
+      - name: runtest
+        run:
+          python -u "tests/unit-test.py"  
