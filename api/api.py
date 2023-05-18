@@ -6,7 +6,7 @@ from bson.errors import InvalidId
 import os
 # import json
 
-mongodb_host = os.environ.get('MONGO_HOST', 'localhost')
+mongodb_host = os.environ.get('MONGO_HOST', '0.0.0.0')
 mongodb_post = int(os.environ.get('MONGO_PORT', '27017'))
 # configure the connection to the database
 client = MongoClient(mongodb_host, mongodb_post)
