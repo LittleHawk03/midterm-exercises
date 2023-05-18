@@ -2,6 +2,8 @@ name: built
 
 on:
   push:
+    paths:
+      - "!README.md"
   pull_request:
 
 jobs:
