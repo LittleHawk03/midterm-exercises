@@ -5,6 +5,8 @@ on:
     paths:
       - "!README.md"
   pull_request:
+    paths:
+      - "!README.md"
 
 jobs:
   built:
