@@ -24,9 +24,6 @@ candidate_collection = db.candidate
 app = Flask(__name__)
 
 
-
-
-
 @app.route('/',methods=['GET'])
 @app.route('/candidates',methods=['GET'])
 def get_all_candidates():
@@ -43,6 +40,9 @@ def get_all_candidates():
             "field": candidate['field']
         }) 
     return jsonify(candidates)          
+
+
+
 
 
 @app.route('/candidates/<string:_id>', methods=['GET'])
