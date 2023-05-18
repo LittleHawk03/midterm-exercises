@@ -27,6 +27,7 @@ class TestCandidatesAPI(unittest.TestCase):
         response=requests.post(f'{base_host}:{base_port}/candidates',json=self.mockdata)
         data = response.json()
         self._id = data['_id']
+        print("DONE")
 
     
     def test_post_candidate(self):
@@ -42,6 +43,7 @@ class TestCandidatesAPI(unittest.TestCase):
         response=requests.post(f'{base_host}:{base_port}/candidates',json=test_mock_data)
         data = response.json()
         self.port_id = data['_id']
+        print("DONE")
         
         
    
@@ -51,13 +53,16 @@ class TestCandidatesAPI(unittest.TestCase):
         self.assertEqual(response1.status_code,200)
         self.assertEqual(response2.status_code,200)
         self.assertGreater(len(response1.json()), 0)
-        self.assertGreater(len(response2.json()), 0)     
+        self.assertGreater(len(response2.json()), 0)   
+        print("DONE")
+          
         
     def test_get_one_candidate(self):
         # print(self._id)
         response = response = requests.get(f'{base_host}:{base_port}/candidates/{self._id}')
         self.assertEqual(response.status_code,200)
         self.assertGreater(len(response.json()),0)
+        print("DONE")
         
     def test_put_change_candidate(self):
         mock_data_change ={
@@ -79,11 +84,14 @@ class TestCandidatesAPI(unittest.TestCase):
         self.assertEqual(data[0]["university"],mock_data_change["university"])
         self.assertEqual(data[0]["Username"],mock_data_change["Username"])
         self.assertEqual(data[0]["field"],mock_data_change["field"])
+        print("DONE")
+        
       
         
     def test_delete_candicate(self):
         response = requests.delete(f"{base_host}:{base_port}/candidates/{self._id}")
         self.assertEqual(response.status_code,200)
+        print("DONE")
         
     
                 
@@ -93,5 +101,6 @@ class TestCandidatesAPI(unittest.TestCase):
         return super().tearDown()
 
 if __name__ == '__main__':
-	suite = unittest.TestLoader().loadTestsFromTestCase(TestCandidatesAPI)
-	unittest.TextTestRunner().run(suite)
+	# suite = unittest.TestLoader().loadTestsFromTestCase(TestCandidatesAPI)
+	# unittest.TextTestRunner().run(suite)
+    unittest.main()
