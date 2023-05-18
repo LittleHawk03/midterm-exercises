@@ -80,7 +80,7 @@ def action_add():
     print(data)
     
     mess = requests.post(f'{base_host}:{base_port}/candidates',json=data)
-    print(mess)
+    # print(mess)
     
     return redirect("/add_candidate")
 
