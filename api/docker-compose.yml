@@ -3,8 +3,8 @@ version: "3"
 
 
 services:
- 
-  api_app:
+
+  api:
     build: .
     ports:
       - 5500:5500
@@ -14,8 +14,8 @@ services:
       - MONGO_PORT=27017
     depends_on:
       - mongodb
-    networks:
-      - web_network
+    # networks:
+    #   - web_network
      
   # image mongdb port mapping 27017
   mongodb:
@@ -25,11 +25,11 @@ services:
       - ../mongodb/init.js:/docker-entrypoint-initdb.d/init.js
     ports:
       - 27017:27017
-    networks:
-      - web_network
+    # networks:
+    #   - web_network
   
     
-networks:
-  web_network:
-    driver: bridge
+# networks:
+#   web_network:
+#     driver: bridge
         
