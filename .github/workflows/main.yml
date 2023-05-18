@@ -38,10 +38,9 @@ jobs:
       - name: Start containers
         run: docker-compose -f "mongodb/docker-compose.yml" up -d --build
 
-      - name: run api docker images
+      - name: run api with python
         run: |
-          docker run -d -p 3000:3000 -e mongo_host=localhost -e mongo_port=27017 littlehawk03/api:latest
-
+          python -u "api/api.py"
 
       - name: test api running
         run: |
