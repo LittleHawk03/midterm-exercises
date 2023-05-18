@@ -8,3 +8,4 @@ services:
         - ./init.js:/docker-entrypoint-initdb.d/init.js
         ports:
         - 27017:27017
+
