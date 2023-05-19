@@ -29,10 +29,8 @@ jobs:
                     password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
 
-
-                    
             - 
-                name: buil and push docker image api
+                name: build and push docker image api
                 uses: docker/build-push-action@v2
                 with:
                     context: ./api
@@ -40,6 +38,16 @@ jobs:
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
                     tags: ${{ secrets.DOCKER_USERNAME }}/api
+
+            - 
+                name: build and push docker image wed
+                uses: docker/build-push-action@v2
+                with:
+                    context: ./wed
+                    file: ./wed/Dockerfile
+                    builder: ${{ steps.buildx.outputs.name }}
+                    push: true
+                    tags: ${{ secrets.DOCKER_USERNAME }}/web
             
             - 
                 name: Verify
