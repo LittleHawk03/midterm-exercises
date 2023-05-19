@@ -28,6 +28,8 @@ jobs:
                     username: ${{ secrets.DOCKER_USERNAME }}
                     password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
+
+                    
             - 
                 name: buil and push docker image api
                 uses: docker/build-push-action@v2
