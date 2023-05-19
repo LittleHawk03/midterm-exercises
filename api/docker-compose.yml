@@ -20,7 +20,7 @@ services:
     image: mongo:5.0
     container_name: database
     volumes:
-      - ../mongodb/init.js:/docker-entrypoint-initdb.d/init.js
+      - ../database/init.js:/docker-entrypoint-initdb.d/init.js
     ports:
       - 27017:27017
     # networks:
