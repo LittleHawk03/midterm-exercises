@@ -46,9 +46,10 @@ jobs:
         run:
           docker ps
       
-      - name: test api
-        run: |
-          pytest
-      # - name: runtest
-      #   run:
-      #     python -u "tests/unit-test.py"  
+      # - name: test api
+      #   run: |
+      #     pytest
+
+      - name: runtest
+        run:
+          python -m unittest discover tests 
