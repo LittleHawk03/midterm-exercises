@@ -4,6 +4,14 @@ version: "3"
 
 services:
 
+  test:
+    build: ../tests
+    environment:
+      - API_HOST=api
+      - API_POST=5500
+    depends_on:
+      - api
+
   api:
     build: .
     ports:
@@ -28,7 +36,7 @@ services:
     # networks:
     #   - web_network
   
-    
+
 # networks:
 #   web_network:
 #     driver: bridge

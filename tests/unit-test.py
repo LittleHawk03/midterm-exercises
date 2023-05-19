@@ -1,11 +1,9 @@
 import unittest
 import requests
-from bson import ObjectId
-import json
 import os
 
 
-base_host = os.environ.get('API_HOST', 'https://localhost')
+base_host = os.environ.get('API_HOST', 'http://localhost')
 base_port = os.environ.get('API_POST', '5500')
 
 
