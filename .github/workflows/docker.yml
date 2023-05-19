@@ -40,11 +40,11 @@ jobs:
                     tags: ${{ secrets.DOCKER_USERNAME }}/api
 
             - 
-                name: build and push docker image wed
+                name: build and push docker image web
                 uses: docker/build-push-action@v2
                 with:
-                    context: ./wed
-                    file: ./wed/Dockerfile
+                    context: ./web
+                    file: ./web/Dockerfile
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
                     tags: ${{ secrets.DOCKER_USERNAME }}/web
