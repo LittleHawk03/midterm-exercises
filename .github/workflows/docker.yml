@@ -52,7 +52,7 @@ jobs:
                     file: ./api/Dockerfile
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
-                    tags: ${{ secrets.DOCKER_USERNAME }}/api:$RELEASE_VERSION
+                    tags: ${{ secrets.DOCKER_USERNAME }}/api:${{ steps.get-tag.outputs.tag }}
                     cache-from: type=local,src=/tmp/.buildx-cache
                     cache-to: type=local,dest=/tmp/.buildx-cache
 
@@ -67,7 +67,7 @@ jobs:
                     file: ./web/Dockerfile
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
-                    tags: ${{ secrets.DOCKER_USERNAME }}/web:$RELEASE_VERSION
+                    tags: ${{ secrets.DOCKER_USERNAME }}/web:${{ steps.get-tag.outputs.tag }}
                     cache-from: type=local,src=/tmp/.buildx-cache
                     cache-to: type=local,dest=/tmp/.buildx-cache
 
