@@ -37,7 +37,10 @@ jobs:
                   restore-keys: |
                     ${{ runner.os }}-buildx-
 
-
+            - 
+                name: Get Latest Tag
+                id: get-tag
+                uses: WyriHaximus/github-action-get-previous-tag@v1
 
             - 
                 name: build and push docker image api
@@ -47,7 +50,7 @@ jobs:
                     file: ./api/Dockerfile
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
-                    tags: ${{ secrets.DOCKER_USERNAME }}/api
+                    tags: ${{ secrets.DOCKER_USERNAME }}/api:${{ steps.get-tag.outputs.patch }}
                     cache-from: type=local,src=/tmp/.buildx-cache
                     cache-to: type=local,dest=/tmp/.buildx-cache
 
@@ -60,7 +63,7 @@ jobs:
                     file: ./web/Dockerfile
                     builder: ${{ steps.buildx.outputs.name }}
                     push: true
-                    tags: ${{ secrets.DOCKER_USERNAME }}/web
+                    tags: ${{ secrets.DOCKER_USERNAME }}/web:${{ steps.get-tag.outputs.patch }}
                     cache-from: type=local,src=/tmp/.buildx-cache
                     cache-to: type=local,dest=/tmp/.buildx-cache
 
